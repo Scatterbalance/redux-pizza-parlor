@@ -10,8 +10,17 @@ function PizzaListItem( props ){
     const dispatch = useDispatch();
 
     return(
-        <div>
-            <h1>PizzaListItem</h1>
+        <div className = "imageBlock">
+            <img className= "image" src={props.pizza.image_path} alt ={props.pizza.description} />
+            <h2>{props.pizza.name}</h2>
+            <p className= "description">{ props.pizza.description }</p> 
+           
+            <div className = 'price'>
+            <p>price: {props.pizza.price}</p>
+
+            <button className = 'addpizza'>add</button>
+            </div>
+        
         </div>
     )
 }

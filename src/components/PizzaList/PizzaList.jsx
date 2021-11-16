@@ -29,7 +29,7 @@ function PizzaList( props ){
     return(
         <div>
             <h3 className = "StepTitle">Step 1: Select Your Pizza</h3>
-            {pizzas.map( pizza=>(<PizzaListItem pizza={pizza}/>))}
+            {pizzas.map( pizza=>(<PizzaListItem pizza={pizza} key = {pizza.id}/>))}
             <p>{JSON.stringify(pizzas)}</p>
         </div>
     )
