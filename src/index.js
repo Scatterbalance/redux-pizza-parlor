@@ -20,11 +20,33 @@ const pizzas = ( state=[], action ) =>{
     }
     return state;
 }
+const addPizzas = ( state=[], action ) =>{
+    console.log( 'in addPizzas:', action );
+    if( action.type === 'ADD_PIZZA' ){
+        
+        return [...state, action.payload];
+
+    }else if(action.type === 'REMOVE_PIZZA'){
+        
+        state=[...state.splice(), action.payload]
+
+        return state 
+    }
+    return state;
+}
+const CustomerInfo =( state=[], action)=>{
+    if(action.type === 'ADD_CUSTOMER'){
+        return [...state, action.payload];
+    }
+    return state;
+}
 
 // store
 const pizzaStore = createStore(combineReducers({
         tester,
-        pizzas
+        pizzas,
+        addPizzas,
+        CustomerInfo
     })
 )
 
