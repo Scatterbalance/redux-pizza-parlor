@@ -9,7 +9,7 @@ function PizzaListItem( props ){
     // const [name, setName] = useState( null );
     const addPizzas = useSelector( store => store.addPizzas );
     const dispatch = useDispatch();
-
+    
     
 
     return(
@@ -21,8 +21,8 @@ function PizzaListItem( props ){
             <div className = 'price'>
             <p>price: {props.pizza.price}</p>
 
-            <button className = 'addpizza' onClick = { ()=>dispatch( { type: 'ADD_PIZZA', payload: props.pizza} ) }>add</button>
-            <button className = 'removepizza' onClick = { ()=>dispatch( { type: 'REMOVE_PIZZA', payload: props.pizza} ) }>remove</button>
+            <button className = 'addpizza' onClick = { ()=>dispatch( { type: 'ADD_PIZZA', payload: {id: props.pizza.id, price: props.pizza.price, quantity: 1}})}>add</button>
+            <button className = 'removepizza' onClick = { ()=>dispatch( { type: 'REMOVE_PIZZA', payload: {id: props.pizza.id, price: props.pizza.price, quantity: -1}} ) }>remove</button>
             </div>
             <p>{JSON.stringify(addPizzas)}</p>
         

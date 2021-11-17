@@ -7,8 +7,10 @@ function Header( props ){
     // const reducerName = useSelector( store => store.reducerName );
     const addPizzas = useSelector( store => store.addPizzas );
     // const [name, setName] = useState( null );
-
+    
     const dispatch = useDispatch();
+
+
 
     return(
         <div>
@@ -21,3 +23,7 @@ function Header( props ){
 }
 
 export default Header;
+
+
+
+

@@ -20,17 +20,16 @@ const pizzas = ( state=[], action ) =>{
     }
     return state;
 }
+
+//getting data from the pizza item
 const addPizzas = ( state=[], action ) =>{
+   
     console.log( 'in addPizzas:', action );
     if( action.type === 'ADD_PIZZA' ){
-        
-        return [...state, action.payload];
+            return [...state, action.payload];
 
-    }else if(action.type === 'REMOVE_PIZZA'){
-        
-        state=[...state.splice(), action.payload]
-
-        return state 
+     }else if(action.type === 'REMOVE_PIZZA'){
+    
     }
     return state;
 }
