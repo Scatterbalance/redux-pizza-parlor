@@ -35,7 +35,10 @@ const addPizzas = ( state=[], action ) =>{
 }
 const CustomerInfo =( state=[], action)=>{
     if(action.type === 'ADD_CUSTOMER'){
-        return [...state, action.payload];
+        console.log(action.payload);
+        state = action.payload;
+        console.log(state);
+        return state;
     }
     return state;
 }
