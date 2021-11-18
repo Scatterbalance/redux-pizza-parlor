@@ -11,7 +11,7 @@ function Checkout( props ){
 
     const CustomerInfo = useSelector( store => store.CustomerInfo);
     const addPizzas = useSelector( store => store.addPizzas );
-
+    const updateCart = useSelector( store => store.updateCart );
     // const [objectToSend, setobjectToSend] = useState(
     //      {
     //        customer_name: CustomerInfo.name,
@@ -45,7 +45,7 @@ function Checkout( props ){
                   street_address: CustomerInfo.address,
                   city: CustomerInfo.city,
                   zip: CustomerInfo.zip,
-                  total: addPizzas[0].price,
+                  total: Number(updateCart.toFixed(2)),
                   type: CustomerInfo.deliveryMethod,
                   pizzas: addPizzas }
        console.log(objectToSend);
