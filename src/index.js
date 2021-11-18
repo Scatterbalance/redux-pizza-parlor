@@ -5,6 +5,9 @@ import App from './components/App/App';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
+
+
+
 // test reducer
 const tester = ( state='hello world', action ) =>{
     console.log( 'in tester reducer:', action );
@@ -23,12 +26,20 @@ const pizzas = ( state=[], action ) =>{
 
 //getting data from the pizza item
 const addPizzas = ( state=[], action ) =>{
-   
+    let findIndex = 0
+    console.log('findindex:', findIndex);
+    console.log('state:', state);
     console.log( 'in addPizzas:', action );
     if( action.type === 'ADD_PIZZA' ){
             return [...state, action.payload];
 
      }else if(action.type === 'REMOVE_PIZZA'){
+         findIndex = state.indexOf(action.payload)
+            state = state.splice(findIndex,1);
+            
+             
+             
+         
     
     }
     return state;

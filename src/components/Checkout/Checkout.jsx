@@ -8,8 +8,8 @@ function Checkout( props ){
     // const reducerName = useSelector( store => store.reducerName );
     // const [name, setName] = useState( null );
 
-    const CustomerInfo = useSelector( store => store.CustomerInfo );
-    const addPizza = useSelector( store => store.addPizza );
+    const CustomerInfo = useSelector( store => store.CustomerInfo);
+    const addPizzas = useSelector( store => store.addPizzas );
 
     const dispatch = useDispatch();
     const [objectToSend, setobjectToSend] = useState(
@@ -50,6 +50,7 @@ return(
     <div>
     <h1>Checkout</h1>
     <button onClick={postPizzas}>Checkout</button>
+    
     </div>
 )
 }

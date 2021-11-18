@@ -32,6 +32,7 @@ function PizzaList( props ){
         <div id='pizaList'>
             {pizzas.map( pizza=>(<PizzaListItem pizza={pizza} key = {pizza.id}/>))}
             {/* <p>{JSON.stringify(pizzas)}</p> */}
+            
         </div>
         </div>
     )
