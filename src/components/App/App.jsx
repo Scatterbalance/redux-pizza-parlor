@@ -6,6 +6,7 @@ import CustomerInfo from '../CustomerInfo/CustomerInfo';
 import PizzaList from '../PizzaList/PizzaList';
 import Checkout  from '../Checkout/Checkout';
 import Admin from '../Admin/Admin';
+import Footer from '../Footer/Footer';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
@@ -27,6 +28,7 @@ function App() {
 
 
       </BrowserRouter>
+      <Footer />
   
     </div>
   );

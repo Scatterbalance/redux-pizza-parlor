@@ -30,7 +30,7 @@ function PizzaList( props ){
         })
     }
     return(
-        <div>
+        <div className = "pageSettings">
 
             <h3 className = "StepTitle">Step 1: Select Your Pizza</h3>
         <div id='pizaList'>
@@ -39,7 +39,9 @@ function PizzaList( props ){
             
         </div>
         <Link to="/CustomerInfo"><button id="button">Next</button></Link>
+        
         </div>
+        
     )
     
 }
