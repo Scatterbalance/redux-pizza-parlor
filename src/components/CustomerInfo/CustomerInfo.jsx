@@ -19,7 +19,7 @@ function CustomerInfo( props ){
     const [newZip, setnewZip]= useState('');
     const [newDeliveryMethod, setnewDeliveryMethod]= useState('')
     //get customer entered info from click event
-    const updateCustomerName = (event)=>{
+       const updateCustomerName = (event)=>{
         setnewCustomer(event.target.value);
        }
 
@@ -54,7 +54,7 @@ return(
         <input type="radio" id="Delivery" name="delivery method" value="Delivery"></input><label >Delivery</label>
         </div>
 
-        <Link to="/Checkout"><button  onClick={()=>dispatch({type:'ADD_CUSTOMER', 
+        <Link to="/Checkout"><button  onClick = { ()=>dispatch({type:'ADD_CUSTOMER', 
             payload: { name: newCustomer, address: newAddress, city: newCity, zip: newZip, deliveryMethod: newDeliveryMethod} })}>Next</button></Link>
         <p>Customer: { JSON.stringify(CustomerInfo)}</p>
     

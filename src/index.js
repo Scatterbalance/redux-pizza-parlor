@@ -70,6 +70,13 @@ const updateCart = (state= 0, action )=>{
     return state
 
     }//end elseif
+const CustomerInfo =( state=[], action)=>{
+    if(action.type === 'ADD_CUSTOMER'){
+        console.log(action.payload);
+        state = action.payload;
+        console.log(state);
+        return state;
+    }
     return state;
 
 }
