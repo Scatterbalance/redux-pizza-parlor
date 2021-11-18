@@ -16,7 +16,12 @@ function PizzaListItem( props ){
         console.log( 'in switch button' ); 
         setswitchButton( !switchButton );
     }
-    
+    let pizzaObject = {
+        id: props.pizza.id,
+        name: props.pizza.name,
+        price: Number(props.pizza.price),
+        quantity: 1
+    };
     
 
     return(
@@ -30,11 +35,11 @@ function PizzaListItem( props ){
             
             {
                switchButton ?
-            <button className = 'addpizza' onClick = { ()=>{toggleImage();dispatch( { type: 'ADD_PIZZA', payload: {id: props.pizza.id, price: props.pizza.price, quantity: 1}})}}>add</button>:
-            <button className = 'removepizza' onClick = { ()=>{toggleImage();dispatch( { type: 'REMOVE_PIZZA', payload: {id: props.pizza.id, price: props.pizza.price, quantity: -1}} )} }>remove</button>
+            <button className = 'addpizza' onClick = { ()=>{toggleImage();dispatch( { type: 'ADD_PIZZA', payload: pizzaObject})}}>add</button>:
+            <button className = 'removepizza' onClick = { ()=>{toggleImage();dispatch( { type: 'REMOVE_PIZZA', payload: pizzaObject} )} }>remove</button>
             }
             </div>
-            <p>{JSON.stringify(addPizzas)}</p>
+            
         
         </div>
     )

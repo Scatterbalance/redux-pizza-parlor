@@ -7,6 +7,7 @@
   background-color: #BBB6A5;
   height: 70px;
   padding: 20px;
+  padding-bottom: 40px;
   color: #2A2F33;
   margin-bottom: 20px;
 }
@@ -14,6 +15,11 @@
 .App-title {
   text-align: left;
   font-size: 2em;
+}
+.cart{
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: right;
+  color:#2A2F33
 }
 
 .StepTitle{
