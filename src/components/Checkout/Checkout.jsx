@@ -9,8 +9,8 @@ function Checkout( props ){
     // const [name, setName] = useState( null );
     const dispatch = useDispatch();
 
-    const addPizzas = useSelector( store => store.addPizzas );
     const CustomerInfo = useSelector( store => store.CustomerInfo);
+    const addPizzas = useSelector( store => store.addPizzas );
 
     // const [objectToSend, setobjectToSend] = useState(
     //      {
@@ -66,6 +66,7 @@ return(
     <div>
     <h1>Checkout</h1>
     <button onClick={postPizzas}>Checkout</button>
+    
     <p>pizzas to use {JSON.stringify(addPizzas)}</p>
     <p>cust to use {JSON.stringify(CustomerInfo)}</p>
     </div>

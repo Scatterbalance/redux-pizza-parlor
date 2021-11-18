@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Header( props ){
     // const reducerName = useSelector( store => store.reducerName );
-    const addPizzas = useSelector( store => store.addPizzas );
+    const updateCart = useSelector( store => store.updateCart );
     // const [name, setName] = useState( null );
     
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ function Header( props ){
         <div>
             <header className='App-header'>
               <h1 className='App-title'>Prime Pizza</h1>
-              <p>{JSON.stringify(addPizzas)} </p>
+              <p className = "cart">Cart Total: {(Number(updateCart.toFixed(2)))}</p>
             </header>
         </div>
     )
