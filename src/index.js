@@ -28,13 +28,7 @@ const addPizzas = ( state=[], action ) =>{
     return state;
 }
 
-//getting customer info from page
-const CustomerInfo =( state=[], action)=>{
-    if(action.type === 'ADD_CUSTOMER'){
-        return [...state, action.payload];
-    }
-    return state;
-}
+
 
 //adding types of pizzas to reducer store
 const pizzas = ( state=[], action ) =>{
@@ -70,6 +64,9 @@ const updateCart = (state= 0, action )=>{
     return state
 
     }//end elseif
+    return state
+}
+
 const CustomerInfo =( state=[], action)=>{
     if(action.type === 'ADD_CUSTOMER'){
         console.log(action.payload);
