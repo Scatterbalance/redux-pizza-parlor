@@ -2,6 +2,7 @@
    
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Grid, FormRow} from '@material-ui/core'
 import axios from 'axios';
 
 function Checkout( props ){
@@ -64,9 +65,52 @@ function Checkout( props ){
 return(
 
     <div>
-    <h1>Checkout</h1>
-    <button onClick={postPizzas}>Checkout</button>
     
+<Grid container spacing = {2} xs = {12}
+
+><Grid item xs={1} />
+<Grid item 
+
+xs = {8}
+className = "Checkoutleft"
+><h3 >Step 3: Checkout</h3>
+<p>{CustomerInfo.name}</p>
+<p>{CustomerInfo.address}</p>
+<p>{CustomerInfo.city} {CustomerInfo.zip}</p>
+
+<TableContainer component={Paper}  >
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell align = "left">Name</TableCell>
+            <TableCell align="left">Cost</TableCell>
+           
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {addPizzas.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell align="left" component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="left">{row.price}</TableCell>
+             
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    </Grid>
+    <Grid item
+    xs={12}>
+
+
+    <button onClick={postPizzas}>Checkout</button>
+    </Grid>
+    </Grid>
     <p>pizzas to use {JSON.stringify(addPizzas)}</p>
     <p>cust to use {JSON.stringify(CustomerInfo)}</p>
     </div>

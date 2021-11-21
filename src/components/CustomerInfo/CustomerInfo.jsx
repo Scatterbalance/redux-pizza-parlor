@@ -46,7 +46,7 @@ return(
         <h1>Step 2: Customer Information</h1>
         <input type="text" placeholder="Name" onChange={ (event)=>updateCustomerName( event ) } ></input>
         <input type="text" placeholder="Street Address" onChange={ (event)=>updateCustomerAddress( event ) } ></input>
-        <input type="text" placeholder="City" onChange={ (event)=>updateCustomerCity( event ) } ></input>
+        <input type="text" placeholder="City, state" onChange={ (event)=>updateCustomerCity( event ) } ></input>
         <input type="text" placeholder="Zip" onChange={ (event)=>updateCustomerZip( event ) } ></input>
         <p>Pick Up or Delivery?:</p>
         <div onChange={ (event)=>updateDeliveryMethod( event ) }>
@@ -56,7 +56,7 @@ return(
 
         <Link to="/Checkout"><button  onClick = { ()=>dispatch({type:'ADD_CUSTOMER', 
             payload: { name: newCustomer, address: newAddress, city: newCity, zip: newZip, deliveryMethod: newDeliveryMethod} })}>Next</button></Link>
-        <p>Customer: { JSON.stringify(CustomerInfo)}</p>
+     
     
     </div>
 )
